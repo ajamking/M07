@@ -42,16 +42,17 @@ namespace M07
             var height = random.Next(3, 3);
             var matrix = new int[lenght, height];
             FillDemoMatrix(matrix);
+
             Console.WriteLine("DemoMatrix:");
             PrintMatrix(matrix);
 
+           
 
-
-            Console.WriteLine("Result of Bubble Sorting in Ascending order by Sums of matrix elements:");
-
-            var testExtremumSort = new TestExtremumSort();
-            var newSort = new BubbleSort(matrix, testExtremumSort);
+            var testSumSort = new TestSumSort();
+            var newSort = new BubbleSort(matrix, testSumSort);
             var newMatrix =  newSort.BubbleSortByRowsExtremum();
+
+            Console.WriteLine($"Result of Bubble Sorting in {testSumSort.ComparisonType} order by {testSumSort.OrderType}:");
             PrintMatrix(newMatrix);
         }
 
